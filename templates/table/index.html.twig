@@ -22,9 +22,15 @@
 			{{ n }}</h1>
 
 		<table>
+			{% for i in 0..m%}
 			<tr>
-				<td>{{ m }}</td>
+				<td>{{ i }}</td>
+				<td> x </td>
+				<td>{{ n }}</td>
+				<td> = </td>
+				<td>{{ (i*n) }}</td>
 			</tr>
+			{% endfor %}
 		</table>
 
 
