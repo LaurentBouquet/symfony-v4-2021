@@ -25,7 +25,6 @@ class TableController extends AbstractController
 
         if ($form->isSubmitted()) {
             $data = $form->getData();
-            dump($data);
             $n = $data['table_number'];
             $m = $data['lines_count'];
             $color = $data['color'];
