@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Table;
 use App\Form\TableChoiceType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,10 +29,16 @@ class TableController extends AbstractController
             $n = $data['table_number'];
             $m = $data['lines_count'];
             $color = $data['color'];
+
+            $table = new Table($n);
+            $calculations = $table->calcMultiply($m);
+
             $response = $this->render('table/index.html.twig', [
                 'controller_name' => 'TableController',
                 'n' => $n,
                 'm' => $m,
+                'calc_name' => $table->getCalcName(),
+                'calculations' => $calculations,
                 'color' => $color,
             ]);
         } else {

@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
@@ -32,12 +33,13 @@ class TableChoiceType extends AbstractType
             'attr' => ['style' => "width: 35px;"],
             'data' => 5,
         ])
-        ->add('color', ChoiceType::class, 
-        ['choices'  => [
-            'Red' => 'red',
-            'Blue' => 'blue',
-            'Green' => 'green',
-        ]])
+        ->add('color', ColorType::class)
+        // ->add('color', ChoiceType::class, 
+        // ['choices'  => [
+        //     'Red' => 'red',
+        //     'Blue' => 'blue',
+        //     'Green' => 'green',
+        // ]])
         ->add('Choisir', SubmitType::class);
     }
 

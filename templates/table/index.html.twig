@@ -18,17 +18,16 @@
 	</style>
 
 	<div class="example-wrapper" style="color: {{ color }};">
-		<h1>Table de
-			{{ n }}</h1>
+		<h1>Table de {{ calc_name }} par {{ n }} ({{ 1 }} à {{ m }})</h1>
 
 		<table>
-			{% for i in 0..m%}
+			{% for calculation in calculations %}
 			<tr>
-				<td>{{ i }}</td>
+				<td>{{ calculation.indice }}</td>
 				<td> x </td>
 				<td>{{ n }}</td>
 				<td> = </td>
-				<td>{{ (i*n) }}</td>
+				<td>{{ calculation.result }}</td>
 			</tr>
 			{% endfor %}
 		</table>
